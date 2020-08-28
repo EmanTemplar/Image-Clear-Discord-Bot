@@ -4,5 +4,5 @@ Objective is to create a functional bot that can be started and stopped in multi
 ## Commands:
 The symbol for all commands is "$"
 
-- "&start" will start the loop, clearing all images/links/embeds/attachments every 10 minutes (or specified amount of time)
+- "$start" will start the loop, clearing all images/links/embeds/attachments every 10 minutes (or specified amount of time)
 - "$stop" will stop the loop
