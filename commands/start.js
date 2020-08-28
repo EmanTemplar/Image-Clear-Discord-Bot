@@ -37,6 +37,7 @@ module.exports = {
                         console.log('Attempting to stop loop');
                         try {
                             message.channel.send('Stopping loop successful');
+                            //This message will not auto clear until the next "$start" command is ran. Stays as a reference
                             message.channel.bulkDelete(messages.filter(msg => msg.content === "$stop"));
                             clearInterval(timer);
                             console.log('Stopping loop succsessful');
