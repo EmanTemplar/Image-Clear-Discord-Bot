@@ -1,6 +1,6 @@
 module.exports = {
-	name: 'clear',
-	description: 'Clear Images',
+	name: 'imagedel',
+	description: 'Clear Images Once',
 	execute(message, args) {
         function processCommand(receivedMessage) {
             let fullCommand = receivedMessage.content.substr(1)
@@ -12,7 +12,7 @@ module.exports = {
             message.channel.messages.fetch().then(messages => {
                 const botMessages = messages.filter(msg => msg.author.bot);
                 const imgMessages = messages.filter(msg => msg.attachments.size > 0 | msg.embeds.length > 0);
-                const cmdMessages = messages.filter(msg => msg.content === "$clear");
+                const cmdMessages = messages.filter(msg => msg.content === "$imagedel");
                 message.channel.bulkDelete(botMessages);
                 message.channel.bulkDelete(cmdMessages);
                 message.channel.bulkDelete(imgMessages);

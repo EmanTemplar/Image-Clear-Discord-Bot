@@ -1,9 +1,9 @@
-const clear = require("./clear");
+const clear = require("./imagedel");
 const { MessageFlags } = require("discord.js");
 
 module.exports = {
-	name: 'start',
-	description: 'Start clear image loop',
+	name: 'fullclear',
+	description: 'Start clear all loop',
 	execute(message, args) {
         function processCommand(receivedMessage) {
             let fullCommand = receivedMessage.content.substr(1)
@@ -12,15 +12,15 @@ module.exports = {
             let arguments = splitCommand.slice(1)
         }
         //Loop to continually delete images/embeds/links/gifs/etc.
-        var timer = setInterval(function () { 
+        var timer = setInterval(function () {
             if (message.channel.type == 'text') {
                 message.channel.messages.fetch().then(messages => {
                     const botMessages = messages.filter(msg => msg.author.bot);
-                    const imgMessages = messages.filter(msg => msg.attachments.size > 0 | msg.embeds.length > 0);
-                    const cmdMessages = messages.filter(msg => msg.content === "$start");
+                    const textMessages = messages.filter(msg => msg.content);
+                    const cmdMessages = messages.filter(msg => msg.content === "$fullclear");
                     message.channel.bulkDelete(botMessages);
                     message.channel.bulkDelete(cmdMessages);
-                    message.channel.bulkDelete(imgMessages);
+                    message.channel.bulkDelete(textMessages);
                     
                     messagesDeleted = botMessages.array().length; // number of messages deleted
                     
@@ -53,8 +53,8 @@ module.exports = {
             // anything in here will get looped every 3 seconds (number in milliseconds)
         },3000)
         
-        message.channel.send('Starting image cleanup loop...');
-        console.log('Starting image cleanup loop...')
+        message.channel.send('Starting full cleanup loop...');
+        console.log('Starting full cleanup loop...')
     },  
 };
 

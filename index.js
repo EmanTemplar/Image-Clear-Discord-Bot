@@ -12,7 +12,10 @@ for (const file of commandFiles) {
 
 //Command Get
 client.on('message', message => {
+  //console.log(message.attachments.size)
+  //console.log(message.embeds.length)
   if (!message.content.startsWith(prefix) || message.author.bot) return;
+  
 
   const args = message.content.slice(prefix.length).trim().split(/ +/);
   const command = args.shift().toLowerCase();
