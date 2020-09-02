@@ -1,5 +1,5 @@
 # Discord Bot to keep Text Channels in Servers Clear. 
-Objective is to create a functional bot that can be started and stopped in multiple channels of a Discord Server to be able to keep text channels, text only.
+Objective is to create a functional bot that can be started and stopped in multiple channels of a Discord Server to be able to keep text channels, text or image free.
 
 ## Commands:
 The symbol for all commands is "$"
