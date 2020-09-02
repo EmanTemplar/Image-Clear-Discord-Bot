@@ -13,6 +13,8 @@ The symbol for all commands is "$"
 ### Setting up for personal use:
 You need to add a '.env' file to act as the token login for the bot. This file will contain the following parameters (ignore parantheses for content);
 
-DISCORD_TOKEN:(insert bot token here) <br>
-OWNER=(ID token of server owner) <br>
+DISCORD_TOKEN:(insert bot token here) 
+<br>
+OWNER=(ID token of server owner) 
+<br>
 PREFIX=(choose prefix that you want to use across the bot, default is "$")
